@@ -7,7 +7,7 @@ let punctuationMessi = 0;
 let punctuationCR7 = 0;
 let j;
 
-function handleMove(position) {
+function handleMove(position) {board
 
 
 
