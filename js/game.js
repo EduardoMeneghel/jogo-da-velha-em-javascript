@@ -1,85 +1,72 @@
-let board = ['','','','','','','','','',];
-let playerTime = 0;
-let player = "Messi";
-let symbols = ['x','o'];
-let gameOver = false;
-let punctuationMessi = 0;
-let punctuationCR7 = 0;
-let j;
-
-function handleMove(position) {board
+jogador = "x";
 
 
-
-if (gameOver){
-   
-    board[0] = "";
-    board[1] = "";
-    board[2] = "";
-    board[3] = "";
-    board[4] = "";
-    board[5] = "";
-    board[6] = "";
-    board[7] = "";
-    board[8] = "";
-
-
-}
-
-    if (board[position] == '') {
-        board[position] = symbols[playerTime]
-
-        gameOver = isWin();
-
-        if(gameOver == false) {
-            if (playerTime == 0) {
-                playerTime = 1;
-                player = "CR7";
-            } else if (playerTime == 1) {
-                playerTime = 0;
-                player = "MESSI";
-            } else {
-                player = "EMPATE";
-            }
-
+function select(element) {
+    if (element.classList == "square"){
+        element.classList.add(jogador);
+        element.value =jogador;
+        if(jogador == "x"){
+            jogador = "o";
+        } else {
+            jogador = "x"
         }
     }
-    return gameOver;
-}
+    gameover(jogador);
+  }
 
-function isWin() {
-    
-    let winStates =[
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [2, 4, 6],
-        [0, 4, 8],
+  function gameover(jogador) {
+    position0 = document.getElementById('r0').value;
+    position1 = document.getElementById('r1').value;
+    position2 = document.getElementById('r2').value;
+    position3 = document.getElementById('r3').value;
+    position4 = document.getElementById('r4').value;
+    position5 = document.getElementById('r5').value;
+    position6 = document.getElementById('r6').value;
+    position7 = document.getElementById('r7').value;
+    position8 = document.getElementById('r8').value;
+    positions = 
+    [
+        position0, position1, position2, position3, position4, position5, position6, position7, position8
     ]
 
-    let contador = 0;
-    for(let j = 0; j < board.length; j++){
-        if (board[j] != '') {
-            contador++;
+    win =
+    [
+        [positions[0],positions[1],positions[2]],
+        [positions[3],positions[4],positions[5]],
+        [positions[6],positions[7],positions[8]],
+        [positions[0],positions[3],positions[6]],
+        [positions[1],positions[4],positions[7]],
+        [positions[2],positions[5],positions[8]],
+        [positions[0],positions[4],positions[8]],
+        [positions[2],positions[4],positions[6]]
+
+    ]
+    for(i = 0; i < win.length; i++){
+        if(win[i][0] == win[i][1] && win[i][0] == win[i][2] && win[i][0]){
+            alert("O jogador "+jogador+" ganhou!")
+            resetGame();
         }
     }
+  }
 
-    for(let i = 0; i < winStates.length; i++){
-        let sequence = winStates[i];
-        let position1 = sequence[0];
-        let position2 = sequence[1];
-        let position3 = sequence[2];
+  function resetGame(jogador) {
+    document.getElementById('r0').value = '';
+    document.getElementById('r1').value = '';
+    document.getElementById('r2').value = '';
+    document.getElementById('r3').value = '';
+    document.getElementById('r4').value = '';
+    document.getElementById('r5').value = '';
+    document.getElementById('r6').value = '';
+    document.getElementById('r7').value = '';
+    document.getElementById('r8').value = '';
 
-        if(board[position1] == board[position2] && board[position1] == board[position3] && board[position1] != '') {
-            return true;
-        }
-    }
-    if(contador == 9){
-        player = "'EMPATE'";
-        return true;
-    }
-    return false;
-}
+    document.getElementById('r0').className = 'square';
+    document.getElementById('r1').className = 'square';
+    document.getElementById('r2').className = 'square';
+    document.getElementById('r3').className = 'square';
+    document.getElementById('r4').className = 'square';
+    document.getElementById('r5').className = 'square';
+    document.getElementById('r6').className = 'square';
+    document.getElementById('r7').className = 'square';
+    document.getElementById('r8').className = 'square';
+  }

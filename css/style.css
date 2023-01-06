@@ -38,8 +38,8 @@ body{
 }
 
 .square{
-    width: 20vw;
-    height: 20vw;
+    width: 10vw;
+    height: 10vw;
     display: inline-block;
     vertical-align: sub;
 }
@@ -47,45 +47,45 @@ body{
 #r0{
     margin: 0px;
     padding: 0px;
-    border-right: 10px white solid;
-    border-bottom: 10px white solid;
+    border-right: 5px white solid;
+    border-bottom: 5px white solid;
 }
 
 #r1{
     padding: 0px;
     margin: 0px;
-    border-bottom: 10px white solid;
+    border-bottom: 5px white solid;
 }
 
 #r2{
     margin: 0;
-    border-left: 10px white solid;
-    border-bottom: 10px white solid;
+    border-left: 5px white solid;
+    border-bottom: 5px white solid;
 }
 
 #r3{
     margin: 0px;
     padding: 0px;
-    border-right: 10px white solid;
-    border-bottom: 10px white solid;
+    border-right: 5px white solid;
+    border-bottom: 5px white solid;
 }
 
 #r4{
     padding: 0px;
     margin: 0px;
-    border-bottom: 10px white solid;
+    border-bottom: 5px white solid;
 }
 
 #r5{
     margin: 0;
-    border-left: 10px white solid;
-    border-bottom: 10px white solid;
+    border-left: 5px white solid;
+    border-bottom: 5px white solid;
 }
 
 #r6{
     margin: 0px;
     padding: 0px;
-    border-right: 10px white solid;
+    border-right: 5px white solid;
 }
 
 #r7{
@@ -95,7 +95,7 @@ body{
 
 #r8{
     margin: 0;
-    border-left: 10px white solid;
+    border-left: 5px white solid;
 }
 
 .o{
@@ -105,8 +105,8 @@ body{
 .o:after{
     position: absolute;
     content: "\1F916";
-    font-size: 130px;
-    line-height: 155px;
+    margin-top: 7px;
+    font-size: 300%;
     top: 0;
     bottom: 0;
     left: 0;
@@ -120,8 +120,8 @@ body{
 .x:after{
     position: absolute;
     content: "\1F47D";
-    font-size: 130px;
-    line-height: 155px;
+    margin-top: 7px;
+    font-size: 300%;
     top: 0;
     bottom: 0;
     left: 0;
