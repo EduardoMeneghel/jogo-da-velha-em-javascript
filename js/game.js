@@ -1,5 +1,6 @@
 jogador = "x";
-
+jogador1 = 0;
+jogador2 = 0;
 
 function select(element) {
     if (element.classList == "square"){
@@ -43,13 +44,18 @@ function select(element) {
     ]
     for(i = 0; i < win.length; i++){
         if(win[i][0] == win[i][1] && win[i][0] == win[i][2] && win[i][0]){
-            alert("O jogador "+jogador+" ganhou!")
-            resetGame();
+            resetGame(jogador);
         }
     }
   }
 
   function resetGame(jogador) {
+
+    if(jogador == 'o'){
+        jogador1 = jogador1+1;
+    } else {
+        jogador2 = jogador2+1;
+    }
     document.getElementById('r0').value = '';
     document.getElementById('r1').value = '';
     document.getElementById('r2').value = '';
@@ -69,4 +75,6 @@ function select(element) {
     document.getElementById('r6').className = 'square';
     document.getElementById('r7').className = 'square';
     document.getElementById('r8').className = 'square';
-  }
+    
+    document.getElementById('message').innerHTML = '<p>Messi: '+jogador1+' CR7: '+jogador2+'</p>';
+}
